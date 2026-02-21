@@ -4,6 +4,7 @@ from tkinter import filedialog, messagebox
 class MicroCPreCompilador:
 
     def __init__(self, root):
+<<<<<<< HEAD
         self.palabras_reservadas = [
         "begin",
         "end",
@@ -13,6 +14,8 @@ class MicroCPreCompilador:
         "float",
         "char"
     ]
+=======
+>>>>>>> 630cd7e01016538f7451acdf17a49e19aa41e1e4
         self.root = root
         self.root.title("MicroC - Pre Compilador")
         self.root.geometry("1000x600")
@@ -43,15 +46,19 @@ class MicroCPreCompilador:
         # -------- TextBox1 (Editor) --------
         self.text_editor = tk.Text(self.root, height=15)
         self.text_editor.pack(fill=tk.BOTH, expand=True)
+<<<<<<< HEAD
         self.text_editor.bind("<<Modified>>", self.marcar_no_guardado)
         self.text_editor.bind("<Return>", self.auto_indent)
         self.text_editor.bind("<KeyRelease>", self.resaltar_sintaxis)
+=======
+>>>>>>> 630cd7e01016538f7451acdf17a49e19aa41e1e4
 
         # -------- TextBox2 (Consola) --------
         self.text_consola = tk.Text(self.root, height=8, bg="black", fg="lime")
         self.text_consola.pack(fill=tk.BOTH)
         self.text_consola.config(state=tk.DISABLED)
 
+<<<<<<< HEAD
     # -------- FUNCIONES --------
     def nuevo(self):
        if not self.archivo_guardado:
@@ -271,9 +278,37 @@ class MicroCPreCompilador:
             resultado += f"{token[0]} → {token[1]}\n"
 
         messagebox.showinfo("Analizador Léxico", resultado)
+=======
+    # -------- FUNCIONES VACÍAS POR AHORA --------
+    def nuevo(self):
+        pass
+
+    def abrir(self):
+        pass
+
+    def guardar(self):
+        pass
+
+    def editar(self):
+        pass
+
+    def compilar(self):
+        pass
+
+    def ayuda(self):
+        pass
+
+    def salir(self):
+        pass
+
+>>>>>>> 630cd7e01016538f7451acdf17a49e19aa41e1e4
 
 if __name__ == "__main__":
     root = tk.Tk()
     app = MicroCPreCompilador(root)
     root.mainloop()
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 630cd7e01016538f7451acdf17a49e19aa41e1e4

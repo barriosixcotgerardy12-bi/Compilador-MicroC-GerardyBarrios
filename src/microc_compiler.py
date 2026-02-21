@@ -402,11 +402,9 @@ class MicroCCompiler:
         self.textbox1.focus_set()
 
     def compilar(self):
-        """Compilación — funcionalidad pendiente para próximas entregas."""
+        """Compilación — funcionalidad pendiente."""
         self._log("─" * 48)
         self._log("▸ [Compilar] — Función en desarrollo.")
-        self._log("  Esta funcionalidad se implementará")
-        self._log("  en próximas entregas del proyecto.")
         self._log("─" * 48)
         messagebox.showinfo("Compilar",
                             "La función de compilación se desarrollará\nen próximas entregas.\n\n[Compilación en desarrollo]")
@@ -452,7 +450,7 @@ FUNCIONES DISPONIBLES:
 ✏️  Editar   → Habilita la edición de un
                archivo abierto en solo lectura.
 
-▶  Compilar → [En desarrollo — próxima entrega]
+▶  Compilar → [En desarrollo]
 
 ❓  Ayuda    → Muestra esta ventana.
 

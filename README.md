@@ -50,6 +50,6 @@ Librerías utilizadas
 <img width="1102" height="723" alt="image" src="https://github.com/user-attachments/assets/826a6182-78e1-4e87-b49c-4e11b43f5d44" />
 
 # Video Demostrativo 
-discule la calidad y disculpe que lo haya grabado en el teléfono ya que ah la hora de grabar no se miraba la interfaz rafica y tuve que tomar otra alternativa. 
+discule la calidad y disculpe que lo haya grabado en el teléfono ya que ah la hora de grabar no se miraba la interfaz grafica y tuve que tomar otra alternativa. 
 [Ver video demostrativo aquí](https://youtu.be/ugfdJHFe4mk)
 

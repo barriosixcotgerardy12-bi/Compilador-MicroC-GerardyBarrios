@@ -47,7 +47,7 @@ Permite modificar el contenido del código dentro del editor.
 ## Boton Compilar
  Está en proceso por el momento. 
 
- ## Botón Ayuda
+ #3 Botón Ayuda
  Muestra información sobre el funcionamiento del programa y orientación básica para el usuario.
 
 # Incluye
@@ -59,5 +59,5 @@ Permite modificar el contenido del código dentro del editor.
 1. Primera imagen es la interfaz gráfica
 2. Segunda imagen es al abrir un archivo que ya habia guardado anteriormente
 3. Tercera imagen es en donde quieres guardar el archivo que has creado
-4. Cuarta imagen es a la ora de compilar y dice que esta en desarrollo
+4. Cuarta imagen es a la hora de compilar y dice que esta en desarrollo
 5. Quinta imagen se muestra informacion del funcionaiento del programa al apachar el botón de ayuda

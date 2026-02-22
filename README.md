@@ -27,4 +27,4 @@ Librerías utilizadas
 * ejecutar el programa con el siguiente comando (python src/microc_compiler.py)
 * Se abrirá la aplicación del Pre-Compilador MicroC donde se podrá cargar un archivo de código y realizar el análisis correspondiente.
 
-![alt text](image-1.png)
+![alt text](image.png)

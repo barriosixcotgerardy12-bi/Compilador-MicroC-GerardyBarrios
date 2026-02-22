@@ -55,14 +55,9 @@ Permite modificar el contenido del código dentro del editor.
 * Uso de los botones principales.
 * Información del proyecto.
 
-1. Primera imagen es la interfaz gráfica 
-2. Segunda imagen es al abrir un archivo que ya habia guardado anteriormente 
-3. Tercera imagen es en donde quieres guardar el archivo que has creado 
-4. Cuarta imagen es a la ora de compilar y dice que esta en desarrollo 
-5. Quinta imagen se muestra informacion del funcionaiento del programa al apachar el botón de ayuda 
-
-![alt text](image.png)
-![Interfaz principal](docs/captura1.png)
-![Abrir archivo](docs/captura2.png)
-![Guardar archivo](docs/captura3.png)
-![Compilar](docs/captura4.png)
+# Descripción de las fotos 
+1. Primera imagen es la interfaz gráfica
+2. Segunda imagen es al abrir un archivo que ya habia guardado anteriormente
+3. Tercera imagen es en donde quieres guardar el archivo que has creado
+4. Cuarta imagen es a la ora de compilar y dice que esta en desarrollo
+5. Quinta imagen se muestra informacion del funcionaiento del programa al apachar el botón de ayuda

@@ -62,11 +62,7 @@ Permite modificar el contenido del código dentro del editor.
 5. Quinta imagen se muestra informacion del funcionaiento del programa al apachar el botón de ayuda 
 
 ![alt text](image.png)
-![alt text](<Captura de pantalla 2026-02-22 113847.png>)
-![alt text](<Captura de pantalla 2026-02-22 113818.png>)
-![alt text](<Captura de pantalla 2026-02-22 114058.png>)
-<<<<<<< HEAD
-![alt text](<Captura de pantalla 2026-02-22 114132.png>)
-=======
-![alt text](<Captura de pantalla 2026-02-22 114132.png>)
->>>>>>> b9bcbff30bbbf560e6fab67695c5a439ed3ebd07
+![Interfaz principal](docs/captura1.png)
+![Abrir archivo](docs/captura2.png)
+![Guardar archivo](docs/captura3.png)
+![Compilar](docs/captura4.png)

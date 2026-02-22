@@ -12,45 +12,45 @@ El programa fue desarrollado en Python y cuenta con una interfaz gráfica que fa
 * Se abrirá la ventana principal del código Pre-Compilador MicroC.
 * Puedes darle en la terminal y poner el comando -python src/microc_compiler.py- y asi se abrira la interfaz grafica del Pre-compilador.
 
-## Botón Nuevo 
+# Botón Nuevo 
 Esta opción permite crear un archivo nuevo dentro del editor del programa.
 
-# Pasos
+## Pasos
 * Presionar el botón Nuevo.
 * El área de edición se limpiará.
 * El usuario podrá comenzar a escribir código desde cero.
 
-## Botón Abrir 
+# Botón Abrir 
 Permite abrir un archivo de código guardado en la computadora.
 
-# Pasos
+## Pasos
 * Presionar el botón Abrir.
 * Seleccionar el archivo desde el explorador.
 * El contenido del archivo se mostrará en el editor del programa.
 
-## Botón Guardar 
+# Botón Guardar 
  Sirve para guardar el código que el usuario está escribiendo o editando.
 
-# Pasos
+## Pasos
 * Presionar el botón Guardar.
 * Elegir la ubicación donde se guardará el archivo.
 * El archivo quedará almacenado en la computadora.
 
-## Botón Editar
+# Botón Editar
 Permite modificar el contenido del código dentro del editor.
 
-# Funcionamiento principal
+## Funcionamiento principal
 * Al abrir un archivo al principio no te ejara escribir asi que tiene que apachar el boton de editar y te dejara hacer modificaciones a tu código.
 * Corregir errores.
 * Actualizar el contenido del archivo abierto.
 
-## Boton Compilar
+# Boton Compilar
  Está en proceso por el momento. 
 
- ## Botón Ayuda
+ # Botón Ayuda
  Muestra información sobre el funcionamiento del programa y orientación básica para el usuario.
 
-# Incluye
+## Incluye
 * Descripción del sistema.
 * Uso de los botones principales.
 * Información del proyecto.

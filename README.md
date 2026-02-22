@@ -1,5 +1,5 @@
 * Gerardy Maria Fernanda Barrios Ixcot 
-* Carnet: 02425513
+* Carnet: 202425513
 * Curso Autómatas y Lenguajes
 * Proyecto: Compilador MicroC
 

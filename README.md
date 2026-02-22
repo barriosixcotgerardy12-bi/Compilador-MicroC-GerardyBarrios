@@ -1,7 +1,7 @@
-Gerardy Maria Fernanda Barrios Ixcot 
-Carnet: 02425513
-Curso Autómatas y Lenguajes
-Proyecto: Compilador MicroC
+* Gerardy Maria Fernanda Barrios Ixcot 
+* Carnet: 02425513
+* Curso Autómatas y Lenguajes
+* Proyecto: Compilador MicroC
 
 ## Descripción del Proyecto         
 El proyecto Pre-compilador MicroC consiste en el desarrollo de una aplicación que simula las primaras etapas de un compilador para un lenguaje en simplificado llamado MicroC hecho en python. El sistema permite cargar archivo de código fuente, analizar su estructura y verificar posibles errores básicos antes del proceso de compilacion. Ademas el objetivo principal es aplicar los conceptos aprendidos en el curso de Autómatas y lenguaje, comprendiendo cómo funcionan los procesos internos de un compilador y fortaleciendo habilidades en programación y organización de proyectos con GitHub.

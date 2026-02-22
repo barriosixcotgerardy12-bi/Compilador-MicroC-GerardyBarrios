@@ -5,7 +5,7 @@ Mi objetivo del sistema es simular el funcionamiento básico de un pre-compilado
 
 El programa fue desarrollado en Python y cuenta con una interfaz gráfica que facilita la interacción con el usuario para cargar archivos, visualizar el contenido del codigo y analizar su estructura. 
 
-## Manual de Usuario 
+# Manual de Usuario 
 1. Inicio del programa 
 * Abrir la carpeta de proyecto llamada -Compilador-MicroC-GerardyBarrios-
 * Ejecuta el archivo principal del programa llamada -src-

@@ -1,7 +1,7 @@
 # Documentacíon del Proyecto-Pre-Compilador MicroC
 El proyecto desarrollado para el curso de Autómatas y Lenguajes de la Universidad Mesoamericana
 
-Mi objetivo del sistema es simular el funcionamiento básico de un pre-compilador para el lenguaje MicroC, permitiendo analzar código fuente y detectar posibles errores antes de su compilación.
+Mi objetivo del sistema es simular el funcionamiento básico de un pre-compilador para el lenguaje MicroC, permitiendo analizar código fuente.
 
 El programa fue desarrollado en Python y cuenta con una interfaz gráfica que facilita la interacción con el usuario para cargar archivos, visualizar el contenido del codigo y analizar su estructura. 
 
@@ -40,8 +40,7 @@ Permite abrir un archivo de código guardado en la computadora.
 Permite modificar el contenido del código dentro del editor.
 
 ## Funcionamiento principal
-* Al abrir un archivo al principio no te ejara escribir asi que tiene que apachar el boton de editar y te dejara hacer modificaciones a tu código.
-* Corregir errores.
+* Al abrir un archivo al principio no te dejara escribir asi que tiene que precionar el boton de editar y te dejara hacer modificaciones a tu código.
 * Actualizar el contenido del archivo abierto.
 
 # Boton Compilar

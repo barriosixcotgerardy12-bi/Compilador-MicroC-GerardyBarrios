@@ -29,6 +29,7 @@ Librerías utilizadas
 
 # Commits Realizados
 
+
 | # | Mensaje | Descripción |
 |---|---|---|
 | 1 | `init: estructura inicial del repositorio` | Creación del repositorio y README base |
@@ -41,6 +42,7 @@ Librerías utilizadas
 | 8 | `docs: agregar capturas de pantalla` | Imágenes de la interfaz |
 | 9 | `fix: resolver conflicto manual de usuario` | Corrección de conflicto Git |
 | 10 | `docs: README completo con datos del estudiante` | README finalizado |
+
 
 <img width="1006" height="636" alt="image" src="https://github.com/user-attachments/assets/2bae9480-f935-4666-a83d-aeb3ed539612" />
 

@@ -40,7 +40,7 @@ Permite abrir un archivo de código guardado en la computadora.
 Permite modificar el contenido del código dentro del editor.
 
 ## Funcionamiento principal
-* Al abrir un archivo al principio no te dejara escribir asi que tiene que precionar el boton de editar y te dejara hacer modificaciones a tu código.
+* Al abrir un archivo al principio no te dejara modificar tu codigo fuente asi que tiene que precionar el boton de editar y te dejara hacer modificaciones a tu código.
 * Actualizar el contenido del archivo abierto.
 
 # Boton Compilar

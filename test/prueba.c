@@ -6,4 +6,4 @@ int main() {
     // Mostrar resultado
     printf("La suma es: %d", suma);
 
-    return 0;
+    return 0; 

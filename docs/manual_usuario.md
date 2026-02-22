@@ -65,4 +65,8 @@ Permite modificar el contenido del código dentro del editor.
 ![alt text](<Captura de pantalla 2026-02-22 113847.png>)
 ![alt text](<Captura de pantalla 2026-02-22 113818.png>)
 ![alt text](<Captura de pantalla 2026-02-22 114058.png>)
+<<<<<<< HEAD
 ![alt text](<Captura de pantalla 2026-02-22 114132.png>)
+=======
+![alt text](<Captura de pantalla 2026-02-22 114132.png>)
+>>>>>>> b9bcbff30bbbf560e6fab67695c5a439ed3ebd07

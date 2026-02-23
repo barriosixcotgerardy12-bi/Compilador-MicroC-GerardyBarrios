@@ -51,5 +51,5 @@ Librerías utilizadas
 
 # Video Demostrativo 
 discule la calidad y disculpe que lo haya grabado en el teléfono ya que ah la hora de grabar no se miraba la interfaz grafica y tuve que tomar otra alternativa. 
-[Ver video demostrativo aquí](https://youtu.be/ugfdJHFe4mk)
+[Ver video demostrativo aquí](https://youtu.be/e2tFPNO_uIU)
 

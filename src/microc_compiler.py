@@ -6,7 +6,10 @@ Catedrático: Ing. Baudilio Boteo
 
 import tkinter as tk
 from tkinter import filedialog, messagebox, font
+import sys
 import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from analizador_lexico import AnalizadorLexico
 
 
 class MicroCCompiler:
@@ -402,12 +405,34 @@ class MicroCCompiler:
         self.textbox1.focus_set()
 
     def compilar(self):
-        """Compilación — funcionalidad pendiente."""
+        """Ejecuta el análisis léxico sobre el código en TextBox1."""
+        codigo = self._get_code().strip()
+
+        if not codigo:
+            messagebox.showwarning("Compilar", "No hay código para compilar.\nEscribe o abre un archivo primero.")
+            return
+
+        self._limpiar_output()
         self._log("─" * 48)
-        self._log("▸ [Compilar] — Función en desarrollo.")
+        self._log("▸ Iniciando Análisis Léxico...")
         self._log("─" * 48)
-        messagebox.showinfo("Compilar",
-                            "La función de compilación se desarrollará\nen próximas entregas.\n\n[Compilación en desarrollo]")
+
+        try:
+            AL = AnalizadorLexico()
+            ListToken = AL.AnalisisLexico(codigo)
+
+            if ListToken:
+                for token in ListToken:
+                    self._log(token)
+                self._log("─" * 48)
+                self._log(f"▸ Análisis completado: {len(ListToken)} tokens encontrados.")
+            else:
+                self._log("▸ No se encontraron tokens.")
+
+        except Exception as e:
+            self._log(f"▸ Error en análisis: {str(e)}")
+
+        self._log("─" * 48)
 
     def ayuda(self):
         """Muestra documentación básica del proyecto."""

@@ -54,84 +54,215 @@ class AnalizadorLexico:
         return 0
 
     # ──────────────────────────────────────────────────────────
-    #  IdentificadorPalabraReservada
-    #  Lee letras/guiones seguidos y forma un lexema
-    #  Luego busca si es palabra reservada o identificador
+    #  IdentificadorPalabraReservada — AUTÓMATA
+    #
+    #  Estados:
+    #  q0 → INICIO: espera letra o guion bajo
+    #  q1 → LEYENDO: acumula letras, dígitos o guion bajo
+    #  q2 → ACEPTAR: carácter no válido → fin del lexema
+    #
+    #  q0 --[letra|_]--> q1
+    #  q1 --[letra|dígito|_]--> q1
+    #  q1 --[otro]--> q2 (ACEPTAR)
     # ──────────────────────────────────────────────────────────
     def IdentificadorPalabraReservada(self, Archivo: str):
-        UL = UnidadesLexicas()
+        UL     = UnidadesLexicas()
         Lexema = ""
+        estado = 0  # q0 — Estado inicial
 
         while self.cont < len(Archivo):
             c = Archivo[self.cont]
-            if c.isalpha() or c.isdigit() or c == '_':
-                Lexema += c
-                self.cont += 1
-            else:
-                break
 
-        token = UL.GetTokenPalabra(Lexema)
-        self.Lista.append(self._formato(self.Linea, Lexema, token))
+            if estado == 0:
+                # q0: solo acepta letra o guion bajo para iniciar
+                if c.isalpha() or c == '_':
+                    Lexema += c
+                    self.cont += 1
+                    estado = 1  # transición → q1
+                else:
+                    estado = 2  # transición → q2
 
-    # ──────────────────────────────────────────────────────────
-    #  EnteroReal
-    #  Lee dígitos y puntos para formar números enteros o reales
-    # ──────────────────────────────────────────────────────────
-    def EnteroReal(self, Archivo: str):
-        Lexema = ""
-        tiene_punto = False
+            elif estado == 1:
+                # q1: sigue leyendo letras, dígitos o guion bajo
+                if c.isalpha() or c.isdigit() or c == '_':
+                    Lexema += c
+                    self.cont += 1
+                    estado = 1  # se mantiene en q1
+                else:
+                    estado = 2  # transición → q2
 
-        while self.cont < len(Archivo):
-            c = Archivo[self.cont]
-            if c.isdigit():
-                Lexema += c
-                self.cont += 1
-            elif c == '.' and not tiene_punto:
-                Lexema += c
-                tiene_punto = True
-                self.cont += 1
-            else:
+            elif estado == 2:
+                # q2: estado de aceptación — lexema completo
                 break
 
         if Lexema:
-            if tiene_punto:
-                token = 201  # Token para número real
-            else:
-                token = 200  # Token para número entero
+            token = UL.GetTokenPalabra(Lexema)
             self.Lista.append(self._formato(self.Linea, Lexema, token))
 
     # ──────────────────────────────────────────────────────────
-    #  AutomataComentario
-    #  Maneja comentarios de una línea (//) y multilínea (/* */)
+    #  EnteroReal — AUTÓMATA
+    #
+    #  Estados:
+    #  q0 → INICIO: espera un dígito
+    #  q1 → ENTERO: leyendo dígitos enteros
+    #  q2 → PUNTO: encontró un punto decimal
+    #  q3 → REAL: leyendo dígitos decimales
+    #  q4 → ACEPTAR: carácter no válido → fin del lexema
+    #
+    #  q0 --[dígito]--> q1
+    #  q1 --[dígito]--> q1
+    #  q1 --[punto]--> q2
+    #  q1 --[otro]--> q4 (ACEPTAR como entero)
+    #  q2 --[dígito]--> q3
+    #  q3 --[dígito]--> q3
+    #  q3 --[otro]--> q4 (ACEPTAR como real)
+    # ──────────────────────────────────────────────────────────
+    def EnteroReal(self, Archivo: str):
+        Lexema = ""
+        estado = 0  # q0 — Estado inicial
+
+        while self.cont < len(Archivo):
+            c = Archivo[self.cont]
+
+            if estado == 0:
+                # q0: espera el primer dígito
+                if c.isdigit():
+                    Lexema += c
+                    self.cont += 1
+                    estado = 1  # transición → q1 Entero
+                else:
+                    estado = 4  # transición → q4 Aceptar
+
+            elif estado == 1:
+                # q1: leyendo entero
+                if c.isdigit():
+                    Lexema += c
+                    self.cont += 1
+                    estado = 1  # se mantiene en q1
+                elif c == '.':
+                    Lexema += c
+                    self.cont += 1
+                    estado = 2  # transición → q2 Punto
+                else:
+                    estado = 4  # transición → q4 Aceptar como entero
+
+            elif estado == 2:
+                # q2: encontró punto, espera dígito decimal
+                if c.isdigit():
+                    Lexema += c
+                    self.cont += 1
+                    estado = 3  # transición → q3 Real
+                else:
+                    estado = 4  # transición → q4 Aceptar
+
+            elif estado == 3:
+                # q3: leyendo parte decimal
+                if c.isdigit():
+                    Lexema += c
+                    self.cont += 1
+                    estado = 3  # se mantiene en q3
+                else:
+                    estado = 4  # transición → q4 Aceptar como real
+
+            elif estado == 4:
+                # q4: estado de aceptación — número completo
+                break
+
+        if Lexema:
+            # q1 o q2 → entero | q3 → real
+            if estado == 4 and '.' in Lexema:
+                token = 201  # Número real
+            else:
+                token = 200  # Número entero
+            self.Lista.append(self._formato(self.Linea, Lexema, token))
+
+    # ──────────────────────────────────────────────────────────
+    #  AutomataComentario — AUTÓMATA
+    #
+    #  Estados:
+    #  q0 → INICIO: lee la primera diagonal /
+    #  q1 → DIAGONAL: encontró /, decide qué tipo es
+    #  q2 → LINEA: comentario de una línea (//)
+    #  q3 → BLOQUE: comentario de bloque (/*)
+    #  q4 → CIERRE: encontró * dentro de bloque
+    #  q5 → ACEPTAR: comentario terminado
+    #  q6 → DIVISION: era solo el símbolo /
+    #
+    #  q0 --[/]--> q1
+    #  q1 --[/]--> q2 (comentario línea)
+    #  q1 --[*]--> q3 (comentario bloque)
+    #  q1 --[otro]--> q6 (es división)
+    #  q2 --[\n]--> q5 (ACEPTAR)
+    #  q2 --[otro]--> q2
+    #  q3 --[*]--> q4
+    #  q3 --[otro]--> q3
+    #  q4 --[/]--> q5 (ACEPTAR)
+    #  q4 --[otro]--> q3
     # ──────────────────────────────────────────────────────────
     def AutomataComentario(self, Archivo: str):
-        # Verificar si es // o /*
-        if self.cont + 1 < len(Archivo):
-            siguiente = Archivo[self.cont + 1]
+        UL     = UnidadesLexicas()
+        estado = 0  # q0 — Estado inicial
 
-            if siguiente == '/':
-                # Comentario de una línea — ignorar hasta fin de línea
-                while self.cont < len(Archivo) and Archivo[self.cont] != '\n':
-                    self.cont += 1
+        while self.cont < len(Archivo):
+            c = Archivo[self.cont]
 
-            elif siguiente == '*':
-                # Comentario multilínea — ignorar hasta */
-                self.cont += 2  # Saltar /*
-                while self.cont < len(Archivo) - 1:
-                    if Archivo[self.cont] == '*' and Archivo[self.cont + 1] == '/':
-                        self.cont += 2  # Saltar */
-                        break
-                    if Archivo[self.cont] == '\n':
-                        self.Linea += 1
+            if estado == 0:
+                # q0: lee la primera diagonal
+                if c == '/':
                     self.cont += 1
-            else:
-                # Es solo el símbolo /
-                UL = UnidadesLexicas()
+                    estado = 1  # transición → q1
+                else:
+                    estado = 6  # transición → q6
+
+            elif estado == 1:
+                # q1: decide qué tipo de comentario es
+                if c == '/':
+                    self.cont += 1
+                    estado = 2  # transición → q2 Comentario línea
+                elif c == '*':
+                    self.cont += 1
+                    estado = 3  # transición → q3 Comentario bloque
+                else:
+                    estado = 6  # transición → q6 Es división
+
+            elif estado == 2:
+                # q2: comentario de línea — ignora hasta \n
+                if c == '\n':
+                    estado = 5  # transición → q5 Aceptar
+                else:
+                    self.cont += 1
+                    estado = 2  # se mantiene en q2
+
+            elif estado == 3:
+                # q3: dentro de comentario bloque
+                if c == '*':
+                    self.cont += 1
+                    estado = 4  # transición → q4 posible cierre
+                elif c == '\n':
+                    self.Linea += 1
+                    self.cont += 1
+                    estado = 3  # se mantiene en q3
+                else:
+                    self.cont += 1
+                    estado = 3  # se mantiene en q3
+
+            elif estado == 4:
+                # q4: encontró *, espera /
+                if c == '/':
+                    self.cont += 1
+                    estado = 5  # transición → q5 Aceptar
+                else:
+                    estado = 3  # transición → q3 no era cierre
+
+            elif estado == 5:
+                # q5: estado de aceptación — comentario terminado
+                break
+
+            elif estado == 6:
+                # q6: era solo el símbolo de división
                 token = UL.GetTokenSimbolo('/')
                 self.Lista.append(self._formato(self.Linea, '/', token))
-                self.cont += 1
-        else:
-            self.cont += 1
+                break
 
     # ──────────────────────────────────────────────────────────
     #  AnalisisLexico

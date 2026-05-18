@@ -4,7 +4,15 @@
 * Proyecto: Compilador MicroC
 
 ## Descripción del Proyecto         
-El proyecto Pre-compilador MicroC consiste en el desarrollo de una aplicación que simula las primaras etapas de un compilador para un lenguaje en simplificado llamado MicroC hecho en python. El sistema permite cargar archivo de código fuente, analizar su estructura y verificar posibles errores básicos antes del proceso de compilacion. Ademas el objetivo principal es aplicar los conceptos aprendidos en el curso de Autómatas y lenguaje, comprendiendo cómo funcionan los procesos internos de un compilador y fortaleciendo habilidades en programación y organización de proyectos con GitHub.
+Compilador MicroC desarrollado en Python con interfaz gráfica Tkinter.
+Implementa el Analizador Léxico completo con 3 autómatas siguiendo
+el diagrama de flujo del curso de Autómatas y Lenguajes 2026.
+
+### Lo implementado:
+- Pre-Compilador: Nuevo, Abrir, Guardar, Editar, Salir, Ayuda
+- Analizador Léxico Fase I: tokens, lexemas, líneas
+- Analizador Léxico Fase II: palabras reservadas, números, comentarios
+- Detección de errores léxicos
 
 
 ## Tecnologías Utilizadas       

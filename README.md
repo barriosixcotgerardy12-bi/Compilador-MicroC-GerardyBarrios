@@ -115,15 +115,19 @@ q3 --[]--> q4 --[/]--> q5 (ACEPTAR)
 ### Capturas de Pantalla — Analizador Léxico
 
 **Compilación normal — palabras reservadas e identificadores:**
+
 <img width="710" height="476" alt="Captura de pantalla 2026-05-17 230156" src="https://github.com/user-attachments/assets/3fcc23ac-d166-4e51-9061-bb9b379782d7" />
 
 **Números enteros y reales:**
+
 <img width="695" height="404" alt="Captura de pantalla 2026-05-17 230212" src="https://github.com/user-attachments/assets/54fdef4e-2a30-4cc4-b0a7-a749c0e7a946" />
 
 **Comentarios ignorados:**
+
 <img width="678" height="409" alt="Captura de pantalla 2026-05-17 230244" src="https://github.com/user-attachments/assets/abbf33b4-9599-4969-9d73-e400a32e5dfc" />
 
 **Detección de errores:**
+
 <img width="870" height="430" alt="Captura de pantalla 2026-05-17 230305" src="https://github.com/user-attachments/assets/ca0177c7-24d1-4030-b1e4-fc63287dcd2f" />
 
 ---

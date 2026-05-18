@@ -321,8 +321,9 @@ class AnalizadorLexico:
                 else:
                     self.Lista.append(self._formato(self.Linea, Lexema, "Símbolo no encontrado"))
 
-            # ── Carácter no reconocido ─────────────────────────
+            # ── Carácter no reconocido — "Símbolo no encontrado" ──
             else:
+                self.Lista.append(self._formato(self.Linea, c, "ERROR - Símbolo no encontrado"))
                 self.cont += 1
 
         return self.Lista
